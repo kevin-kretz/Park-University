@@ -1,4 +1,10 @@
-#Final Submition
+/*******************************
+ * Unit 1, Chapter 9 - Programming Assignment
+ * By Kevin Kretz | 15 June 2019
+ * This is a program that gets creates, sorts, prints, searches an array of random numbers.
+ ********************************/
+
+
 import java.util.Random;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -12,7 +18,7 @@ class Test {
         int[] unsortedArray = new int[10];
 
         //Fill each element in this array with random numbers from 1 to 20.
-        for (int i = 1; i < 10; i++) {
+        for (int i = 0; i < 10; i++) {
             int randomNumber = rand.nextInt(20) + 1;
             unsortedArray[i] = randomNumber;
         }
