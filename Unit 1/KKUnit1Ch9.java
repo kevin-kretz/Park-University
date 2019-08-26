@@ -9,7 +9,7 @@ import java.util.Random;
 import java.util.Arrays;
 import java.util.Scanner;
 
-class Test {
+class KKUnit1Ch9 {
     public static void main(String[] args) {
         Random rand = new Random();
         Scanner scnr = new Scanner(System.in);
