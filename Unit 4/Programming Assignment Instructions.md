@@ -2,7 +2,7 @@
 This assignment lets you practice with writing and using conditional statements, boolean functions, and while loops.
 
 ## Preparation
-Download the program [RandomTurtle-book-main.py](../RandomTurtle-book.main.py) which is the program from the book, but with a main function and better variable and parameter names. Make sure you can run the program before you do anything else.
+Download the program [RandomTurtle-book-main.py](./RandomTurtle-book.main.py) which is the program from the book, but with a main function and better variable and parameter names. Make sure you can run the program before you do anything else.
 
 ## Directions
 Modify the program in the following ways:
