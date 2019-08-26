@@ -1,0 +1,88 @@
+/*******************************
+ * Unit 6, Chapter 15 - Programming Assignment
+ * By Kevin Kretz | 20 July 2019
+ * This is a program that validates a sale in dollars and cents with a $ and a .(period).
+ ********************************/
+
+import java.util.regex.Pattern;
+
+public class KKSaleCheck{
+  private String dollars;
+  private String cents;
+  private String error = "";
+  private String numeric;
+  private String alphabetic;
+
+  //Receive sale as a string
+  KKSaleCheck(String sale){
+    this.dollars = null;
+    this.cents = null;
+
+    //Perform error checking to ensure time was entered in proper format to include a color (.) between the dollars and cents and a $ at the start of the string.
+    errorCheckSale(sale);
+
+    if (this.error.equals("")) {
+      //Use indexOf and substring to separate the sale string into the appropriate instance variables
+      seperateSale(sale);
+
+      //Use try/catch to catch format errors of dollars and cents as shown in example
+      //If an error occurs, change the error instance variable to reflect the error (see sample)
+      //If more than one error occurs in the format of the dollars and cents, show both.
+      errorCheckDollars(this.dollars);
+      errorCheckCents(this.cents);
+    }
+
+    if (this.error.equals("")) {
+
+      //Print in the format $123.45 using both dollars and cents instance variables
+      numeric = "$" + this.dollars + "." + this.cents;
+
+      //Print in the format 123 dollars and 45 cents using both dollars and cents instance variables
+      alphabetic = this.dollars + " dollars and " + this.cents + " cents";
+    }
+  }
+
+  public void errorCheckSale(String sale) {
+    if (sale.charAt(0) != '$') {
+      this.error += "Invalid sale format missing \"$\" - " + sale + "\n";
+    }
+    try {
+      if (sale.charAt(sale.length() - 3) != '.') {
+        this.error += "Invalid sale format missing \".\" - " + sale + "\n";
+      }
+    }
+    catch(Exception StringIndexOutOfBounds) {
+      this.error += "Invalid sale format missing \".\" - " + sale + "\n";
+    }
+  }
+
+  public void seperateSale(String sale){
+    this.dollars = sale.substring(1, sale.indexOf('.'));
+    this.cents = sale.substring(sale.indexOf('.') + 1);
+  }
+
+  public void errorCheckDollars(String dollars) {
+    if (!Pattern.matches("[0-9]+", dollars)) {
+      this.error += "Invalid dollar format - For input string: \"" + dollars + "\"\n";
+    }
+  }
+
+  public void errorCheckCents(String cents) {
+    if (!Pattern.matches("[0-9]+", cents)) {
+      this.error += "Invalid cents format - For input string: \"" + cents + "\"\n";
+    }
+  }
+
+  //Include a getError method that returns the error instance variable to the print method
+  public String getError() {
+    return this.error;
+  }
+
+  public String getNumeric() {
+    return numeric;
+  }
+
+  public String getAlphabetic() {
+    return alphabetic;
+  }
+}
