@@ -1,3 +1,9 @@
+/*******************************
+ * Unit 5, Chapter 14 - Programming Assignment
+ * By Kevin Kretz | 12 July 2019
+ * This class creates a new pizza if the entered type is meat.
+ ********************************/
+
 import java.util.Scanner;
 
 public class KKPizza{
