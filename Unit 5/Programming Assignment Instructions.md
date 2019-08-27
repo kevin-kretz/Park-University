@@ -2,7 +2,7 @@
 This assignment lets you practice using strings, including slices and other string methods.
 
 ## Preparation
-Review the string functions in section 9.5 of the text. You should be able to complete the assignment using these functions and string slices, although there are many other possible approaches. You may also find the function isdigit() helpful, though it is not necessary. Download the starter program, CityState.py, compile and run. This gives you the list of data to use to test your program.
+Review the string functions in section 9.5 of the text. You should be able to complete the assignment using these functions and string slices, although there are many other possible approaches. You may also find the function isdigit() helpful, though it is not necessary. Download the starter program, [CityState.py](./CityState.py), compile and run. This gives you the list of data to use to test your program.
 
 ## Directions
 Your assignment is to take a list of strings representing [city, state, and zip code] and print them in a nice table, one per line. However, the data was input on a keyboard that had a temperamental space bar. Sometimes it doesn't work and other times it generates multiple spaces, so the data may look like
