@@ -4,7 +4,7 @@ This assignment lets you practice reading data from a file.
 ## Preparation
 This assignment must be done in a standalone Python environment, not the textbook. See the Textbooks and Materials page for instructions on installing the compiler on your local computer or using Park’s virtual desktop.
 
-Download the data file [CityStateData.txt](../Unit5/CityStateData.txt). This is the same set of data that you used in the previous assignment, but stored in a text file instead. Put this text file in the same folder as your Python program.
+Download the data file [CityStateData.txt](./CityStateData.txt). This is the same set of data that you used in the previous assignment, but stored in a text file instead. Put this text file in the same folder as your Python program.
 
 ## Directions
 1. Rewrite your program from Unit 5 so that it reads myCities from a file instead of defining all the data as part of your program itself. 
