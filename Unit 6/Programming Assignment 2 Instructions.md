@@ -5,8 +5,9 @@ This assignment lets you practice with reading from a file and manipulating list
 This assignment must be done in a standalone Python environment, not the textbook. See the Textbooks and Materials page for instructions on installing the compiler on your local computer or using Park’s virtual desktop.
 
 1.  Download the following all to the same folder:
-    1. The program Lab9-start.pyPreview the document 
-    2. The data files health-no-head-sample.csvPreview the document and health-no-head.csvPreview the document 
+    1. The program [Lab9-start.py](./Lab9-start.py)
+    2. The data files [health-no-head-sample.csv](./health-no-head-sample.csv) and [health-no-head.csv](./health-no-head.csv) 
+    
     *The big data file contains records of some infectious diseases from 1928 to 2011. The  small one only includes data from 3 years from 5 states. Run the python program. It should print something like this*
     ```
     MEASLES,206.98,COLORADO,2099,1014000,1928
