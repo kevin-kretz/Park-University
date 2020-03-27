@@ -1,3 +1,4 @@
+
 /****************************************************
 * GPA.java
 * Kevin Kretz
@@ -14,7 +15,6 @@ public class GPA {
     float sumOfGrades = 0;
     float totalCreditHours = 0;
     float GPA;
-    int i;
     int numberOfClasses;
     Scanner userInput = new Scanner(System.in);
 
@@ -29,7 +29,7 @@ public class GPA {
 
     else {
       // for each class taken
-      for (i = numberOfClasses; i > 0; i--) {
+      while (numberOfClasses > 0) {
         int grade;
         int creditHours;
 
@@ -44,6 +44,7 @@ public class GPA {
         // Add (grade * credit hours) to the current sum of the grades
         sumOfGrades += (grade * creditHours);
         totalCreditHours += creditHours;
+        numberOfClasses--;
       }
 
       // Calculate the GPA
