@@ -1,5 +1,5 @@
 ## Project 1
-###Instructions
+### Instructions
 A warehouse holds items in “racks,” where each rack has multiple shelves. The racks are referred to by single uppercase letters (e.g., C or P), the shelves are referred to by integers, and items are referred to with a short description (e.g., popcorn maker, linens).
 
 In the warehouse, workers receive requests to retrieve items. Each request is formatted “rack-shelf item”. For example: C-3 popcorn maker.
