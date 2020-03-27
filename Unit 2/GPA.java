@@ -33,7 +33,7 @@ public class GPA {
         int grade;
         int creditHours;
 
-        // Get the users grade
+        // Get the user's grade
         System.out.print("Enter the grade for a course (A=4, B=3, C=2, D=1, F=0): ");
         grade = userInput.nextInt();
 
