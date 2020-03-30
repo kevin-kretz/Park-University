@@ -17,13 +17,9 @@ System.out.println();
 ```
 ### Sample Session
 ```
-Enter the item: *food processor*
-
-Enter the item's rack letter: *Bravo*
-
-Enter the item's shelf number: *5*
-
- 
+Enter the item: food processor
+Enter the item's rack letter: Bravo
+Enter the item's shelf number: 5
 
 Sending a request for B-5 food processor.
 ```
