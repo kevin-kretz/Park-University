@@ -16,7 +16,17 @@ Note the sample session below. As always, you must mimic the sample session prec
 System.out.println();
 ```
 ### Sample Session
-(Not Provided)
+```
+Enter the item: *food processor*
+
+Enter the item's rack letter: *Bravo*
+
+Enter the item's shelf number: *5*
+
+ 
+
+Sending a request for B-5 food processor.
+```
 
 
 ## Project 2
