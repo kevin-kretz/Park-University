@@ -14,14 +14,17 @@ public class FishTank {
     this.numGoldfish = 0;
   }
 
-  public addGoldfish(){
+  public void addGoldfish(){
     this.numGoldfish++;
     totalGoldfish++;
   }
 
-  public removeGoldfish() {
+  public void removeGoldfish() {
     this.numGoldfish--;
     totalGoldfish--;
   }
 
+  public void transferGoldfish(FishTank newFishTank) {
+    newFishTank.numGoldfish += this.numGoldfish;
+    this.numGoldfish = 0;
 }
