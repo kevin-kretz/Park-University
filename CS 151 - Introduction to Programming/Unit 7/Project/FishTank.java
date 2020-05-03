@@ -63,4 +63,8 @@ public class FishTank {
       System.out.println("This tank is too small for its current number of goldfish.");
     }
   }
+ 
+  public static void displayTotalFish() {
+    System.out.println("There are " + totalGoldfish + " total goldfish in all the tanks combined.");
+  }
 }
