@@ -13,8 +13,9 @@ public class Tram {
   }
 
   // sellChildTicket method
-  public void sellChildTicket() {
-
+  public void sellChildTicket(int age) {
+    double ticketCost = 4.50;
+    addPerson(age, ticketCost);
   }
 
   // sellAdultTicket
@@ -23,7 +24,7 @@ public class Tram {
   }
 
   // addPerson helper method
-  public void addPerson() {
+  public void addPerson(int age, double ticketCost) {
 
   }
 
