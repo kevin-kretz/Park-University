@@ -11,4 +11,24 @@ public class Tram {
     this.name = name;
     this.capacity = capacity;
   }
+
+  // sellChildTicket method
+  public void sellChildTicket() {
+
+  }
+
+  // sellAdultTicket
+  public void sellAdultTicket() {
+
+  }
+
+  // addPerson helper method
+  public void addPerson() {
+
+  }
+
+  // displaySeatsAndEarnings method
+  public void displaySeatsAndEarnings() {
+
+  }
 }
