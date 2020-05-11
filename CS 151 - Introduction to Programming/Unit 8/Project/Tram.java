@@ -6,6 +6,7 @@ public class Tram {
   private String name;
   private int capacity;
   private int purchasedSeats;
+  private int ticketEarnings;
 
   // Constructor
   public Tram(String name, int capacity) {
@@ -33,11 +34,11 @@ public class Tram {
       } else if (age >= 65) {
         ticketCost -= 2.00;
         purchasedSeats++;
-        System.out.printf("The adult is old enough to receive the senior discount, so they pay only $%,d.2",
+        System.out.printf("The adult is old enough to receive the senior discount, so they pay only $%,.2f",
             ticketCost);
       } else {
         purchasedSeats++;
-        System.out.printf("A ticket has been sold for $%,d.2", ticketCost);
+        System.out.printf("A ticket has been sold for $%,.2f", ticketCost);
       }
     } else {
       System.out.println("Sorry, the tram is full. Unable to purchase ticket.");
@@ -46,6 +47,7 @@ public class Tram {
 
   // displaySeatsAndEarnings method
   public void displaySeatsAndEarnings() {
-
+    System.out.printf("Tram \"%s\" has sold %d seats for a grand total of $%,.2f.", this.name, this.purchasedSeats,
+        this.ticketEarnings);
   }
 }
