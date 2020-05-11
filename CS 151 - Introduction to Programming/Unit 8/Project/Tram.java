@@ -5,6 +5,7 @@
 public class Tram {
   private String name;
   private int capacity;
+  private int purchasedSeats;
 
   // Constructor
   public Tram(String name, int capacity) {
@@ -26,7 +27,21 @@ public class Tram {
 
   // addPerson helper method
   public void addPerson(int age, double ticketCost) {
-
+    if (this.purchasedSeats < this.capacity) {
+      if (age <= 3) {
+        System.out.println("The child is young enough to share a seat, so they ride for free.");
+      } else if (age >= 65) {
+        ticketCost -= 2.00;
+        purchasedSeats++;
+        System.out.printf("The adult is old enough to receive the senior discount, so they pay only $%,d.2",
+            ticketCost);
+      } else {
+        purchasedSeats++;
+        System.out.printf("A ticket has been sold for $%,d.2", ticketCost);
+      }
+    } else {
+      System.out.println("Sorry, the tram is full. Unable to purchase ticket.");
+    }
   }
 
   // displaySeatsAndEarnings method
