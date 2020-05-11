@@ -14,13 +14,14 @@ public class Tram {
 
   // sellChildTicket method
   public void sellChildTicket(int age) {
-    double ticketCost = 4.50;
-    addPerson(age, ticketCost);
+    double ticketCost = 4.50; // sets ticket cost
+    addPerson(age, ticketCost); // passes ticket to helper method
   }
 
   // sellAdultTicket
-  public void sellAdultTicket() {
-
+  public void sellAdultTicket(int age) {
+    double ticketCost = 8.50; // sets ticket cost
+    addPerson(age, ticketCost); // passes ticket to helper method
   }
 
   // addPerson helper method
