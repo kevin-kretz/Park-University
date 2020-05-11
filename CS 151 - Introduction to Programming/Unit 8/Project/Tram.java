@@ -6,7 +6,7 @@ public class Tram {
   private String name;
   private int capacity;
   private int purchasedSeats;
-  private int ticketEarnings;
+  private double ticketEarnings;
 
   // Constructor
   public Tram(String name, int capacity) {
@@ -15,15 +15,19 @@ public class Tram {
   }
 
   // sellChildTicket method
-  public void sellChildTicket(int age) {
+  public Tram sellChildTicket(int age) {
     double ticketCost = 4.50; // sets ticket cost
-    addPerson(age, ticketCost); // passes ticket to helper method
+    System.out.println("A child wants to buy a ticket.");
+    this.addPerson(age, ticketCost); // passes ticket to helper method
+    return this;
   }
 
   // sellAdultTicket
-  public void sellAdultTicket(int age) {
+  public Tram sellAdultTicket(int age) {
     double ticketCost = 8.50; // sets ticket cost
-    addPerson(age, ticketCost); // passes ticket to helper method
+    System.out.println("An adult wants to buy a ticket.");
+    this.addPerson(age, ticketCost); // passes ticket to helper method
+    return this;
   }
 
   // addPerson helper method
@@ -33,12 +37,14 @@ public class Tram {
         System.out.println("The child is young enough to share a seat, so they ride for free.");
       } else if (age >= 65) {
         ticketCost -= 2.00;
+        ticketEarnings += ticketCost;
         purchasedSeats++;
-        System.out.printf("The adult is old enough to receive the senior discount, so they pay only $%,.2f",
+        System.out.printf("The adult is old enough to receive the senior discount, so they pay only $%,.2f.\n",
             ticketCost);
       } else {
         purchasedSeats++;
-        System.out.printf("A ticket has been sold for $%,.2f", ticketCost);
+        ticketEarnings += ticketCost;
+        System.out.printf("A ticket has been sold for $%,.2f.\n", ticketCost);
       }
     } else {
       System.out.println("Sorry, the tram is full. Unable to purchase ticket.");
@@ -47,7 +53,7 @@ public class Tram {
 
   // displaySeatsAndEarnings method
   public void displaySeatsAndEarnings() {
-    System.out.printf("Tram \"%s\" has sold %d seats for a grand total of $%,.2f.", this.name, this.purchasedSeats,
+    System.out.printf("Tram \"%s\" has sold %d seats for a grand total of $%,.2f.\n", this.name, this.purchasedSeats,
         this.ticketEarnings);
   }
 }
