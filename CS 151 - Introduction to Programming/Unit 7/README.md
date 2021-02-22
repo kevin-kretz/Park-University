@@ -1,7 +1,7 @@
 # Project - Fish Tank
 Did you know that common goldfish can grow up to 10 inches long? This can only be achieved if the goldfish has a large enough tank. Typical fishbowls are poor environments for most fish, as they lack swimming room, accommodation for a filter, and proper temperature regulation among other things. For a single common goldfish, it is recommended for it to be stored in a tank with a capacity of no less than 30 gallons of water. For every additional common goldfish in the tank, you should use a tank with 12 more gallons of storage capacity. For example, a tank with four common goldfish should have a 66 gallon storage capacity. That’s 30 + 12 + 12 + 12 = 66.
 
-If you have the dimensions of the tank, you can compute its gallon capacity using this equation:
+If you have the dimensions of the tank, you can compute its gallon capacity using this equation:  
 *gallon-capacity = (length-in-inches * width-in-inches * height-in-inches) / 231*
 
 Multiplying the length, width, and height together gives us the cubic volume. When you divide the volume by 231, which is the number of cubic inches in a gallon, that gives you the tank’s gallon capacity.
