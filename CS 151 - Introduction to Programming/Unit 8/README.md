@@ -4,8 +4,8 @@ Trams come in many sizes and are frequently used to move people from point A to 
 - Instance constants  
     - ```name```, which stores the tram’s name
     - ```capacity```, which stores the tram’s number of seats
-- Instance variables
-    – ```purchasedSeats```, which stores how many seats on the tram have been purchased
+- Instance variables  
+    - ```purchasedSeats```, which stores how many seats on the tram have been purchased
     - ```ticketEarnings```, which stores earnings from the tram’s ticket sales
 - Constructor – A 2-parameter constructor, which receives the tram’s name and capacity.
 - Methods:
