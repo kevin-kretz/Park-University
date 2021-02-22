@@ -20,6 +20,7 @@ Implement a program that tracks goldfish stored in fish tanks. You must implemen
     - ```displayTotalFish```, a static method which should print the total number of goldfish in all tanks combined.
 
 In your submitted Word document, you must provide all the code in your program. That means you must include your ```FishTank``` class and also a ```FishTankDriver``` class. Your ```FishTankDriver``` class should be easy because its ```main``` method is provided below. You just have to add a prologue, a class heading, and indent the main method.
+## Main Method:
 ```
 public static void main(String[] args)
 {
