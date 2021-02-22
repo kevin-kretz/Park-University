@@ -26,4 +26,4 @@ This assignment lets you practice with writing a simple program to make some art
     
 ## Example
 If your original shape is a slice of bread, then the output of your program would look like this:
-![Shapes of bread](https://canvas.park.edu/courses/43845/files/5396211/download?wrap=1)
+![Shapes of bread](./images/Assignment_1_Example(1).png)
