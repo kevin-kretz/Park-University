@@ -1,8 +1,8 @@
 # Project
 Trams come in many sizes and are frequently used to move people from point A to point B quickly. Oftentimes you will see them at large tourist venues such as zoos and amusement parks. For this project you will write a program that simulates ticket purchases for tram objects. You must implement a Tram class that includes:
 - Five static constants. Study the method descriptions below, and you’ll see five values that should be implemented as static constants.
-- Instance constants
-    – ```name```, which stores the tram’s name
+- Instance constants  
+    - ```name```, which stores the tram’s name
     - ```capacity```, which stores the tram’s number of seats
 - Instance variables
     – ```purchasedSeats```, which stores how many seats on the tram have been purchased
