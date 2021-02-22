@@ -1,6 +1,4 @@
-# Project 1
-
-## Instructions
+# Project
 
 Implement a program that processes people as they arrive at a concert. Your program should prompt the user for their role. It then prompts for their credentials. Here are the four types of people (their roles) and the credentials they need to enter the concert venue:
 
