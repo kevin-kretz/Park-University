@@ -27,4 +27,4 @@ This assignment lets you practice with writing a simple program to make some art
 ## Example
 If your original shape is a slice of bread, then the output of your program would look like this:
 
-![Shapes of bread](/images/Assignment_1_Example.png)
+![Shapes of bread](https://www.github.com/kevin-kretz/Park-University/CS%20152%20-%20Introduction%20to%20Python%20Programming/Unit%201/Assignment%201/images/Assignment_1_Example.png)
