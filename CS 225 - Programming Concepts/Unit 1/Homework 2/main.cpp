@@ -2,65 +2,122 @@
 #include <string> // Include string
 #include <iomanip>  // Include input output manipulation
 
-int main() {
-  // Declare variables
-  char userPhoneNumber[8]; // Declare variable userPhoneNumber
-  int actualPhoneNumber[7]; // Declare int array actualPhoneNumber
-  int phoneNumberIndex = 0; // Declare phoneNumberIndex
+bool finished() {
+  char answer;
+  std::cout << "Would you like to enter another number? (Enter \"Y\" for yes or \"N\" for no): ";
+  std::cin >> answer;
 
-  // Gather user input
+    if (toupper(answer) == 89){  // If user enters y
+      std::cin.ignore();  // Clears user input
+      return false;
+    }
+
+    else {
+      return true;
+    }
+}
+
+std::string getOriginalPhoneNumber() {
+  char userPhoneNumber[8]; // Declare variable userPhoneNumber
   std::cout << "Enter a telephone number (in letters or numbers): ";  // Prompts user for a phone number
   std::cin.getline(userPhoneNumber, 9);  // Stores user response into userPhoneNumber;
+  return userPhoneNumber;
+}
 
-  // Changes the phone number into only numbers
-  for (int i = 0; i <= 7; i++) { // Only process the first 8 digits.  Only ouputs 7 digits.  8th digit is incase of included hyphen or space.
-    char digit = toupper(userPhoneNumber[i]);  // Stores digit in uppercase form for ease of conditional statement
+bool isError(std::string originalPhoneNumber) {
+  for (int i = 0; i < originalPhoneNumber.length(); i++) {
+    char ch = toupper(originalPhoneNumber[i]);
+
+    bool isLetter = false;
+    bool isNumber = false;
+    bool isSpace = false;
+    bool isHyphen = false;
+
+    if (ch >= 'A' && ch <= 'Z') {
+      isLetter = true;
+    }
+    else if (ch >= '0' && ch <= '9') {
+      isNumber = true;
+    }
+    else if (ch == ' ') {
+      isSpace = true;
+    }
+    else if (ch == '-') {
+      isHyphen = true;
+    }
+
+    if (!isLetter && !isNumber && !isSpace && !isHyphen) {
+      return true;
+    }
+  }
+  return false;
+}
+
+std::string convert(std::string originalPhoneNumber) {
+  // Declare variables
+  std::string actualPhoneNumber;
+
+  for (int i = 0; i <= originalPhoneNumber.length(); i++) {
+    char ch = toupper(originalPhoneNumber[i]);   // converts character to uppercase 
     
-    // Changes letter to number and addes to actualPhoneNumber array
-    if (digit >= 'A' && digit <= 'Z') {  // If the current digit is a letter
-      if (digit >= 'A' && digit <= 'C') {
-        actualPhoneNumber[phoneNumberIndex] = 2;  // If 'A - C' store 2 in actualPhone number
+    // Adds hypen after 3rd number
+    if (i == 3) {
+      actualPhoneNumber.append("-");
+    }
+
+    // If letter, convers to number
+    if (ch >= 'A' && ch <= 'Z') {
+      if (ch >= 'A' && ch <= 'C') {
+        actualPhoneNumber.append("2");
       }
-      else if (digit >= 'D' && digit <= 'F') {
-        actualPhoneNumber[phoneNumberIndex] = 3;  // If 'D - F' store 3 in actualPhone number
+      else if (ch >= 'D' && ch <= 'F') {
+        actualPhoneNumber.append("3");
       }
-      else if (digit >= 'G' && digit <= 'I') {
-        actualPhoneNumber[phoneNumberIndex] = 4;  // If 'G - I' store 4 in actualPhone number
+      else if (ch >= 'G' && ch <= 'I') {
+        actualPhoneNumber.append("4");
       }
-      else if (digit >= 'J' && digit <= 'L') {
-        actualPhoneNumber[phoneNumberIndex] = 5;  // If 'J - L' store 5 in actualPhone number
+      else if (ch >= 'J' && ch <= 'L') {
+        actualPhoneNumber.append("5");
       }
-      else if (digit >= 'M' && digit <= 'O') {
-        actualPhoneNumber[phoneNumberIndex] = 6;  // If 'M - O' store 6 in actualPhone number
+      else if (ch >= 'M' && ch <= 'O') {
+        actualPhoneNumber.append("6");
       }
-      else if (digit >= 'P' && digit <= 'S') {
-        actualPhoneNumber[phoneNumberIndex] = 7;  // If 'P - S' store 7 in actualPhone number
+      else if (ch >= 'P' && ch <= 'S') {
+        actualPhoneNumber.append("7");
       }
-      else if (digit >= 'T' && digit <= 'V') {
-        actualPhoneNumber[phoneNumberIndex] = 8;  // If 'T - V' store 8 in actualPhone number
+      else if (ch >= 'T' && ch <= 'V') {
+        actualPhoneNumber.append("8");
       }
       else {
-        actualPhoneNumber[phoneNumberIndex] = 9;  // Otherwise store 9 in actualPhone number
+        actualPhoneNumber.append("9");
       }
-
-      phoneNumberIndex++;
     }
 
-    else if (digit >= '0' && digit <= '9') {
-      actualPhoneNumber[phoneNumberIndex] = digit-48;  // subtracts 48 to eliminate ASCII number.
-      phoneNumberIndex++;
+    // Adds number to string
+    else if (ch >= '0' && ch <= '9') {
+      actualPhoneNumber.append(std::string(1, ch));
+    }
+  }
+  return actualPhoneNumber;
+}
+
+int main() {
+  // declares variables
+  std::string originalPhoneNumber;
+  std::string actualPhoneNumber;
+
+  do {
+    originalPhoneNumber = getOriginalPhoneNumber();
+    if (isError(originalPhoneNumber)) {
+      std::cout << "Invalid Character: Please make sure to only enter letters, numbers, dashes and spaces." << std::endl;
+    }
+    else {
+      actualPhoneNumber = convert(originalPhoneNumber);
+      std::cout << actualPhoneNumber << std::endl;
     }
   }
 
-  // Prints actual phone number
-  for (int i = 0; i < 7; i++) {
-    // Prints a hyphen after the 3rd number
-    if (i == 3) {
-      std::cout << "-";
-    }
-    std::cout << actualPhoneNumber[i];
-  }
+  while (!finished());
 
-  // Return 0 and end of program 
   return 0;
 }
