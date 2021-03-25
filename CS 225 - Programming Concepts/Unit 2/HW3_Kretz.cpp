@@ -3,6 +3,7 @@
 // Kevin Kretz | 23 March 2021
 
 #include <iostream>
+#include <string>
 
 int displayMenu() {
     int menuChoice;
@@ -17,30 +18,73 @@ int displayMenu() {
     return menuChoice;
 }
 
-std::string getTime(int menuChoice){
-    std::string hours;
-    std::string minutes;
-    std::string amPM;
-    
-    std::cout << "Enter hours: ";
-    std::cin >> hours;
-    std::cout << "Enter minutes: ";
-    std::cin >> minutes;
-    
+int getTime(std::string unit) {
+    int time;
+    std::cout << "Enter " << unit << ": ";
+    std::cin >> time;
+    return time;
+}
+
+bool getIsAM(int menuChoice, int hours){
+    bool isAM;
     if (menuChoice == 1) {
+        char userInput;
         std::cout << "Enter AM/PM (A or P): ";
-        std::cin >> amPM;
-        return hours + " " + minutes + " " + amPM;
+        std::cin >> userInput;
+        
+        if (toupper(userInput) == 'A') {
+            isAM = true;
+        }
+        else {
+            isAM = false;
+        }
     }
     else {
-        return hours + " " + minutes;
+        if (hours <= 12) {
+            isAM = true;
+        }
+        else {
+            isAM = false;
+        }
     }
+    std::cout << "\n";
+    return isAM;
+}
+
+std::string convertTime(int menuChoice, int hours, int minutes, bool isAM) {
+    std::string convertedTime;
     
+    if (menuChoice == 1) {
+        if (!isAM) {
+            hours += 12;
+        }
+        convertedTime = std::to_string(hours) + ":" + std::to_string(minutes);
+    }
+    else {
+        if (!isAM) {
+            hours -= 12;
+        }
+        convertedTime = std::to_string(hours) + ":" + std::to_string(minutes);
+        if (!isAM) {
+            convertedTime += " PM";
+        }
+        else {
+            convertedTime += " AM";
+        }
+    }
+    return convertedTime;
+}
+
+void displayResults(std::string convertedTime) {
+    std::cout << "The time is: " << convertedTime << std::endl;
 }
 
 int main() {
     int menuChoice = displayMenu();
-    std::string time = getTime(menuChoice);
-    std::cout << time;
+    int hours = getTime("hours");
+    int minutes = getTime("minutes");
+    bool isAM = getIsAM(menuChoice, hours);
+    std::string convertedTime = convertTime(menuChoice, hours, minutes, isAM);
+    displayResults(convertedTime);
     return 0;
 }
