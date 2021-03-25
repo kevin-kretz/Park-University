@@ -47,24 +47,42 @@ bool getIsAM(int menuChoice, int hours){
             isAM = false;
         }
     }
-    std::cout << "\n";
     return isAM;
 }
 
 std::string convertTime(int menuChoice, int hours, int minutes, bool isAM) {
     std::string convertedTime;
     
+    
+    
     if (menuChoice == 1) {
-        if (!isAM) {
+        if (!isAM ) {
             hours += 12;
         }
-        convertedTime = std::to_string(hours) + ":" + std::to_string(minutes);
+        if (hours == 12 &&  isAM) {
+            hours = 0;
+        }
+        if (hours < 10) {
+            convertedTime += "0";
+        }
+        convertedTime += std::to_string(hours) + ":";
+        if (minutes < 10) {
+            convertedTime += "0";
+        }
+        convertedTime += std::to_string(minutes);
     }
     else {
         if (!isAM) {
             hours -= 12;
         }
-        convertedTime = std::to_string(hours) + ":" + std::to_string(minutes);
+        if (hours < 10) {
+            convertedTime += "0";
+        }
+        convertedTime += std::to_string(hours) + ":";
+        if (minutes < 10) {
+            convertedTime += "0";
+        }
+        convertedTime += std::to_string(minutes);
         if (!isAM) {
             convertedTime += " PM";
         }
@@ -76,15 +94,21 @@ std::string convertTime(int menuChoice, int hours, int minutes, bool isAM) {
 }
 
 void displayResults(std::string convertedTime) {
+    std::cout << "\n";
     std::cout << "The time is: " << convertedTime << std::endl;
+    std::cout << "\n";
 }
 
 int main() {
     int menuChoice = displayMenu();
-    int hours = getTime("hours");
-    int minutes = getTime("minutes");
-    bool isAM = getIsAM(menuChoice, hours);
-    std::string convertedTime = convertTime(menuChoice, hours, minutes, isAM);
-    displayResults(convertedTime);
+    while (menuChoice != 0) {
+        int hours = getTime("hours");
+        int minutes = getTime("minutes");
+        bool isAM = getIsAM(menuChoice, hours);
+        std::string convertedTime = convertTime(menuChoice, hours, minutes, isAM);
+        displayResults(convertedTime);
+        menuChoice = displayMenu();
+    }
+    
     return 0;
 }
