@@ -1,12 +1,16 @@
-// This program converts the time from 24-hour notation to 12-hour notation and vice versa.
+// This program converts the time from 24-hour notation to 12-hour notation and vice versa continuously until user chooses to stop the program.
 // Unit 2 - Homework 3
 // Kevin Kretz | 23 March 2021
 
 #include <iostream> // Included for input and output streams
 #include <string>  // Included for string conversion
 
-// This function displays the menu for the user to choose the type of conversion
-// Pre: 
+// This function displays the menu for the user to choose the type of conversion and returns the user's input
+// Pre: menuChoice - Delcared (Empty)
+// Post: menuChoice
+// In: n/a
+// Out: menuChoice (type:int users choice of which menu option to execute)
+// In-Out: n/a
 int displayMenu() {
     int menuChoice;  // Declare variable
     
@@ -23,7 +27,12 @@ int displayMenu() {
     return menuChoice;  // Return the user input
 }
 
-  // Gets time information from user
+// This function gets and returns the time the user wishes to convert to the other notation
+// Pre: menuChoice
+// Post: menuChoice, hours, minutes
+// In: unit (type:string unit of measurement for time being entered. e.g. hours, minutes)
+// Out: time (type:int minutes or hours, depending on input unit)
+// In-Out: n/a
 int getTime(std::string unit) {
     int time;  // Declare variable
     std::cout << "Enter " << unit << ": ";  // Print prompt to enter time; Unit of measurement changes
@@ -31,7 +40,12 @@ int getTime(std::string unit) {
     return time;  // Returns variable
 }
 
-  // Determines base on time, whether it is AM or PM
+// This function, based on the information provided, returns whether it is AM
+// Pre: menuChoice, hours, minutes
+// Post: menuChoice, hours, minutes, isAM
+// In: menuChoice (type:int to determine if AM/PM will be provided), hours (type:int to calculate AM/PM if not provided)
+// Out: isAM (type:bool signifing whether or not time is AM)
+// In-Out: n/a
 bool getIsAM(int menuChoice, int hours){
     bool isAM;  // Declares variable
     
@@ -58,7 +72,12 @@ bool getIsAM(int menuChoice, int hours){
     return isAM;  // Return boolean value for isAM
 }
 
-  // Using the provided info, converts time to other notation
+// This function, takes a time and returns it converted to the other notation
+// Pre: menuChoice, hours, minutes, isAM
+// Post: menuChoice, hours, minutes, isAM, convertedTime
+// In: menuChoice (type:int to determine if isAM will be provided), hours (type:int), minutes (type:int), isAM(type:bool)
+// Out: convertedString (type:string time converted to new notation)
+// In-Out: n/a
 std::string convertTime(int menuChoice, int hours, int minutes, bool isAM) {
     std::string convertedTime;  // declare variable
 
@@ -100,13 +119,24 @@ std::string convertTime(int menuChoice, int hours, int minutes, bool isAM) {
     return convertedTime;  // return new convertedTime string
 }
 
-  // Print results
+// This function outputs the results of the time converted to the new notation
+// Pre: menuChoice, hours, minutes, isAM, convertedTime
+// Post: menuChoice, hours, minutes, isAM, convertedTime
+// In: convertedTime(type:string used in output string)
+// Out: n/a
+// In-Out: n/a
 void displayResults(std::string convertedTime) {
     std::cout << "\n";  // new line to match example
     std::cout << "The time is: " << convertedTime << std::endl;  // print converted time
     std::cout << "\n";  // new line to match example
 }
 
+// This function is the main function of the program, which calls other functions to gather and calculate the times.
+// Pre: n/a
+// Post: n/a
+// In: n/a
+// Out: n/a
+// In-Out: n/a
 int main() {
     int menuChoice = displayMenu();  // display menu; store answer in variable
     while (menuChoice != 0) {  // while the user wants to continue
