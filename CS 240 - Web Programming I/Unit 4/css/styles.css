@@ -1,0 +1,87 @@
+#about img {
+  float: right;
+  margin-right: 320px;
+}
+
+#about p {
+  margin-left: 320px;
+}
+
+#benefits {
+  background-color: rgb(240, 240, 240);
+  padding-bottom: 2rem;
+}
+
+#nav-menu {
+  width: 15rem;
+  margin: 0 auto;
+}
+
+.nav-item a {
+  color: white;
+  padding: 1rem;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+.nav-item a:hover {
+  background-color: #4c4c51;
+  text-decoration: underline;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  margin: 0;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+body {
+  font-family: 'Calibri';
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  margin: 0;
+  padding: 1rem;
+}
+
+table {
+  margin: 0 auto;
+  background-color: #1a1a1f;
+  color: white;
+  border-radius: 1rem;
+}
+
+td {
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+td img {
+  float: left;
+}
+
+td h3 {
+  margin-left: 4rem;
+}
+hr {
+  margin: 4rem 4rem 0;
+}
+
+p {
+  line-height: 1.5rem;
+}
+
+footer {
+  padding: 1rem;
+  background-color: #1a1a1f;
+  color: white;
+}
+
+footer a {
+  color: white;
+}
