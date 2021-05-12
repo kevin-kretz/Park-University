@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#nav-menu {
+  margin: 0 auto;
+  list-style: none;
+  width: 19rem;
+  text-align: center;
+}
+
+.nav-item {
+  display: inline-block;
+  margin: 0 0.25rem;
+  padding: 1rem;
+  background-color:#901c3a;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.nav-item:hover{
+  background-color:#801935;
+}
+
+.nav-item a {
+  color: white;
+  text-decoration: none;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Calibri Thin";
+  color: white;
+  padding: 1rem;
+}
+
+p {
+  margin: 1rem auto 0;
+  width: 70ch;
+}
+
+h2 {
+  padding-top: 1rem;
+  text-align: center;
+}
+
+img {
+  display: block;
+  margin: 1rem auto 0;
+}
+
+form {
+  width: 70ch;
+  margin: 0 auto;
+  padding: 0 1rem 1rem;
+  background-color: #fc9f1d;
+  border-radius: 1rem;
+}
+
+label {
+  margin-top: 1rem;
+  display: block;
+  font-weight: bold;
+}
+
+input{
+  display: block;
+  font-family: "calibri";
+  font-size: 1rem;
+}
+
+.newsletter {
+  display: inline-block;
+}
+
+.submit {
+  padding: 0.5rem 1rem;
+  margin: 1rem auto;
+  font-weight: bold;
+  display: inline-block;
+}
+
+#benifits {
+  background-color: hsl(140, 67%, 37%);
+}
+
+#benifits img {
+  border: 0.5rem dotted hsl(140, 67%, 20%);
+  border-radius: 1rem;
+}
+
+#contact {
+  background-color: #fca936;
+}
+
+h3 {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+footer {
+  padding: 1rem;
+  background-color: #c51d4a;
+  text-align: center;
+}
+
+section {
+  padding: 2rem;
+}
+
+
+span.center {
+  width: 82px;
+  display: block;
+  margin: 0 auto;
+}
