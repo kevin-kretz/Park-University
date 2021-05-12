@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--Meta data-->
+    <meta charset="utf-8" />
+    <meta name="description" content="Unit 8, Homework 12" />
+    <meta name="keywords" content="Unit 8, HTML" />
+    <meta name="author" content="Kevin Kretz" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Link to external stylesheet-->
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/main.js"></script>
+
+    <!--Page title-->
+    <title>Make a drawing!</title>
+
+    <!--Embedded stylesheet-->
+    <style>
+      #buttons {  /* selects div containing buttons */
+        display: block;  /* displays buttons in single row */
+        margin: 1rem auto;  /* adds top margin; centers group */
+        width: 20rem;  /* sets width for group */
+      }
+
+      #custom-header {  /* selects the custom h2 */
+        margin-top: 2rem;  /* adds top spacing */
+      }
+
+      .button {  /* submit button */
+        padding: 0.5rem 1rem;  /* adds space inside button */
+        margin: 0 1rem; /* centers button */
+      }
+
+      .inline {  /* all labels that should be inline */
+        display: inline;  /* display inline */
+        margin-left: 0.25rem;  /* add slight space on left */
+      }
+
+      canvas {  /* selects canvse */
+        border: 1px solid #0786c5;  /* adds border to the canvas */
+        display: block;  /* gives canvas its own row */
+        margin: 0 auto;  /* centers on page */
+      }
+
+      form {  /* form itself */
+        width: 70ch;  /* sets width to match paragraphs */
+        margin: 1rem auto 0;  /* adds space above and centers form */
+        background-color: #cceeff;  /* changes background color */
+        padding: 1rem;  /* adds breathing room inside of form */
+        border-radius: 1rem;  /* rounds corners */
+      }
+    </style>
+  </head>
+  <!--Beginning of page text-->
+  <body>
+    <!--Heder section of page-->
+    <header>
+      <h1>Make your own drawing</h1>
+      <nav>
+        <ul id="nav-menu">
+          <li class="nav-item"><a href="#intro">Introductions</a></li>
+          <li class="nav-item"><a href="#form">Form</a></li>
+          <li class="nav-item"><a href="#results">Results</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--Main content-->
+    <main>
+      <section id="intro">
+        <h2>Draw some shapes!</h2>
+        <p>Fill out the form below to draw shapes on the canvas.  Insert your name, todays date, and a title for your masterpiece!  </p>
+      </section>
+      
+      <!-- form -->
+      <section id="form">
+        <form>
+            <input type="radio" id="square" name="shapes" checked>
+            <label for="square" class="inline">Square</label><br>
+            <input type="radio" id="circle" name="shapes">
+            <label for="circle" class="inline">Circle</label><br>
+            <input type="radio" id="triangle" name="shapes">
+            <label for="triangle" class="inline">Triangle</label><br>
+            <label for="quantity">Quantity:</label>
+            <select name="quantity" id="quantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3" selected>3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <label for="color">Color:</label>
+            <input type="color" id="color" name="color">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date">
+            <label for="name">Title:</label>
+            <input type="text" id="title" name="title"><br>
+            <div id="buttons">
+              <input type="submit" class="button" id="clear" value="Clear" onclick="this.form.reset()">
+              <input type="submit" class="button" id="default" value="Default" onclick="this.form.reset()">
+              <input type="submit" class="button" id="submit" onclick="initialize(this.form), preventFormReset(event)">
+            </div>
+          </form>        
+      </section>
+
+      <!-- canvas -->
+      <section>
+        <h2>Result</h2>
+        <canvas id="canvas" width="500" height="500"></canvas>
+      </section>
+    </main>
+
+    <!--footer-->
+    <footer>
+      <p id="credit">By: Kevin Kretz | Unit 8, Homework 12 | 9 May 2021</p>
+    </footer>
+  </body>
+</html>
