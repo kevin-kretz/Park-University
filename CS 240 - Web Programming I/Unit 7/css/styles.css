@@ -1,0 +1,113 @@
+* {  /* selects everything */
+  margin: 0;  /* removes margin */
+  padding: 0;  /* removes padding */
+  font-family: "calibri";  /* changes font */
+}
+
+#nav-menu {  /* nav ul */
+  width: 19rem;  /* sets with of list */
+  margin: 1rem auto;  /* centers links */
+}
+
+#submit {  /* submit button */
+  padding: 0.5rem 1rem;  /* adds space inside button */
+  margin: 0.5rem 0 0 15rem;  /* centers button */
+}
+
+.nav-item {  /* each link in nav */
+  display: inline;  /* display in a row */
+  text-align: center;  /* center text */
+  padding: 1rem 0;  /* add space between links */
+}
+
+a {  /* hyperlink itself */
+  color: #ffffff;  /* change color of text */
+  text-decoration: none;  /* remove underline */
+  padding: 1rem;  /* add space between links */
+}
+
+a:hover {  /* when link is hovered on */
+  background-color: #f61109;  /* change background color */
+}
+
+form {  /* form itself */
+  width: 70ch;  /* sets width to match paragraphs */
+  margin: 1rem auto 0;  /* adds space above and centers form */
+}
+
+footer {  /* bottom of page */
+  padding: 1rem;  /* adds white space */
+  color: #ffffff;  /* changes text color to white */
+}
+
+h1 {  /* page title */
+  text-align: center;  /* align center */
+  padding: 2rem 0 1rem;  /* add space above and below */
+  color: #ffffff;  /* change text color to white */
+}
+
+h2 {  /* section titles */
+  margin-top: 1rem;  /* add space above */
+  text-align: center;  /* align center */
+}
+
+header, footer {  /* header and footer of page */
+  background-color: #c50d07;  /* change background color */
+}
+
+input, label, div, select {  /* all elements inside form */
+  margin-left: 3rem;  /* add space on left */
+}
+
+label {  /* labels for inputs */
+  display: block;  /* give each their own row */
+  text-indent: 0.25rem;  /* indent slightly */
+  margin-top: 1rem;  /* add spave above */
+}
+
+legend {  /* form section headers */
+  background-color: #c50d07;  /* change background color */
+  padding: 0.5rem;  /* add padding to all sides */
+  border-radius: 0.5rem;  /* round corners */
+  color: #ffffff;  /* change text color */
+}
+
+main { /* main section of website */
+  padding: 1rem;  /* add padding on all sides */
+  background-color: #fffafa;  /* change background color */
+}
+
+nav {  /* nav menu */
+  background-color: #F9564F;  /* change background color */
+  padding: 1px;  /* add padding on all sides */
+}
+
+p {  /* paragraphs */
+  width: 70ch;  /* set with to 70 characters long for readability */
+  margin: 0.5rem auto;  /* add top and bottom spacing.  center on page */
+}
+
+table {  /* results table */
+  width: 70ch;  /* set width to match paragraph */
+  margin: 0.5rem auto 2rem;  /* add margin to top and bottom; center on page */
+  border: 2px solid #c50d07;  /* add border to match form */
+  background-color: #ffe5e5;  /* change background color */
+  border-collapse: collapse;  /* remove space between cells */
+}
+
+tbody tr:nth-child(even) {  /* every other element inside of the body of the table */
+  background-color: #ffcccc;  /* change background color */
+}
+
+td {  /* the cells inside the table */
+  text-align: center;  /* align center */
+}
+
+tfoot {  /* table summary */
+  background-color: #F9564F;  /* change background color */
+  font-weight: bold;  /* change font-weight */
+}
+
+thead {  /* table header */
+  background-color: #fcb8b5;  /* change background color */
+}
