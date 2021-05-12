@@ -1,0 +1,76 @@
+#future {
+  background-color: rgba(3, 181, 170, .15);
+}
+
+#nav-menu {
+  width: 70ch;
+  margin: 0 auto;
+}
+
+#types {
+  background-color: whitesmoke;
+}
+
+.nav-item {
+  margin: 0 3rem;
+  padding: 1rem;
+}
+
+.nav-item a {
+  color: white;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Calibri';
+}
+
+figcaption {
+  width: 70ch;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Calibri Thin';
+}
+
+h2 {
+  font-family: 'Calibri Thin';
+  text-align: center;
+}
+
+img {
+  display: block;
+  margin: 2rem auto 1rem;
+  border-radius: 1rem;
+}
+
+nav {
+  background-color:  #03B5AA;
+  height: 3rem;
+}
+
+p {
+  margin: 0 auto;
+}
+
+section {
+  margin: 0;
+  padding: 1rem 0 3rem;
+}
+
+table {
+  width: 70ch;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+td {
+    border: 1px solid #000000;
+    padding: .25rem;
+}
+th {
+  border: 1px solid black;
+  text-align: center;
+}
