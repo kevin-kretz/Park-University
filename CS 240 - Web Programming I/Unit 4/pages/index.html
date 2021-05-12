@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--Meta data-->
+    <meta charset="utf-8" />
+    <meta name="description" content="Unit 4, Homework 7" />
+    <meta name="keywords" content="Unit 4, HTML, Cloud Computing" />
+    <meta name="author" content="Kevin Kretz" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Link to external stylesheet-->
+    <link rel="stylesheet" href="../css/styles.css" />
+
+    <!--Page title-->
+    <title>Cloud Computing</title>
+
+    <!--Embedded stylesheet-->
+    <style>
+      #benifits-table {
+        border: none;  /*Removes border*/
+      }
+      #nav-menu {
+        list-style-type: none; /*Removes bullet points*/
+      }
+      .nav-item {
+        display: inline-block;  /*Displays nav menu in one row*/
+      }
+      td.alt-background {
+        background-color: #2e2e33; /*Changes the color of cells to help table organization*/
+      }
+      main p {
+        width: 70ch;  /*sets the max with of a paragraph to 70 characters for better readability*/
+      }
+      nav {
+        background-color: #2e2e33;  /*Changes background color of nav menu*/
+      }
+    </style>
+  </head>
+  <!--Beginning of page text-->
+  <body>
+    <!--Heder section of page-->
+    <header>
+      <h1>Cloud Computing</h1>
+      <nav>
+        <ul id="nav-menu">
+          <li class="nav-item"><a href="#about">About</a></li>
+          <li class="nav-item"><a href="#benifits">Benefits</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--Main content-->
+    <main>
+      <section id="about">
+        <h2>What is cloud computing?</h2>
+        <img alt="Cloud Computing" src="../images/cloud-computing.svg" height="302" width="500">
+        <p>Accoring to Microsoft, cloud computing is the delivery of computing services-including servers, storage, databases, networking, software, analytics, and intelligence-over the Internet ("the cloud") to offer faster innovation, flexible resources, and economies of scale.<sup><a href="#reference-1">1</a></sup>  Most people have actually already used cloud computing, whether they know it or not.  The most common type of cloud computing used by the average user is storage.  Services like Microsoft OneDrive, which is built into Windows 10, and Google Drive have now been established as household names.  Although they may not be fully understood, most people see the benifits of saving all of their files to the cloud to make sure they are safely backed up.  Businesses now have full departments using all sorts of cloud computing services.  They might have a analytics department to determine how their website it used by their customers and artificial intellegence to improve on their current marketing techniques.  They can store all of their information in a dababase, as well as create their own software online in order to interact with these databases.  Cloud computing is already a huge market and will only become a bigger part of our lives.</p>      
+      </section>
+      <section id="benefits">
+        <h2>Why is cloud computing important?</h2>
+
+        <!--Table-->
+        <table id="benifits-table">
+          <tbody>
+          <tr>
+            <td>
+              <img alt="Money Icon" src="../images/cost.svg" height="48" width="48">
+              <h3>Cost</h3>
+              <p>Cloud computing eliminates the upfront costs of buying servers and programs, setting up and running large server racks, the expensive costs of electricity, and your IT experts who are mantaining your equipment.</p>
+            </td>
+            <td class="alt-background">
+              <img alt="Security Icon" src="../images/security.svg" height="48" width="48">
+              <h3>Security</h3>
+              <p>Many cloud providers offer a large set of technologies, and controls that increase your cyber security, helping protect your data, programs, and equipment from any cyber threats.</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="alt-background">
+              <img alt="Reliability Icon" src="../images/reliability.svg" height="48" width="48">
+              <h3>Reliability</h3>
+              <p>Cloud computing makes data backup, and disaster recovery much easier and less expensive because data can be copied to multiple locations on your cloud network.</p>
+            </td>
+            <td>
+              <img alt="Productivity Icon" src="../images/productivity.svg" height="48" width="48">
+              <h3>Productivity</h3>
+              <p>When working with cloud computing, you can increase your productivity tremendously.  You are able to duplicate work stations, quickly reformat servers, and send out patches to systems much quicker.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img alt="Performance Icon" src="../images/performance.svg" height="48" width="48">
+              <h3>Performance</h3>
+              <p>Cloud computing always has fast performance.  Rather than purchasing new workstations or servers every couple years to keeep up with the demands of new software, cloud computing does all of that for you.</p>
+            </td>
+            <td class="alt-background">
+              <img alt="Scaling Icon" src="../images/scaling.svg" height="48" width="48">
+              <h3>Scaling</h3>
+              <p>The benefits of cloud computing services include the ability to scale elastically. If you want to set up a new data center or a whole new work center across the country all you would need to do is increase the number of computers needed in your cloud center.</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="alt-background">
+              <img alt="Speed Icon" src="../images/speed.svg" height="48" width="48">
+              <h3>Speed</h3>
+              <p>Most cloud computing services are provided self service and on demand, so even vast amounts of computing resources can be provisioned in minutes, typically with just a few mouse clicks, giving businesses a lot of flexibility and taking the pressure off capacity planning.</p>
+            </td>
+            <td></td>
+          </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <!--References and footer-->
+    <footer>
+      <p>References:</p>
+        <p id="reference-1"><sup>1</sup> <i>What is cloud computing?  A beginner's guide.</i> Microsoft Azure. Retreived March 17, 2021, from <a href="https://azure.microsoft.com/en-us/overview/what-is-cloud-computing/">https://azure.microsoft.com/en-us/overview/what-is-cloud-computing/</a></p>
+      <p>By: Kevin Kretz | Unit 4, Chapter 7 Homework | 11 Apr 2021</p>
+    </footer>
+  </body>
+</html>
