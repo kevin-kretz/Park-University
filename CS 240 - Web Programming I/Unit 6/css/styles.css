@@ -1,0 +1,130 @@
+/* Everything within the body of the HTML page */
+body {
+  color: #00275a;  /* change font color */
+}
+
+/* header tag */
+header {
+  padding: 1rem 0 0;  /* 1rem padding to top, 0 padding for rest */
+  background-color: #d50032;  /* Change background color */
+}
+
+/* h1 tag */
+h1 {
+  text-align: center;  /* center text */
+  padding: 1rem;  /* adds inner space for element */
+  color: #fff;  /* change font color */
+}
+
+/* nav tag */
+nav {
+  background-color: #00275a;  /* Change background color */
+}
+
+/* ul inside of nav */
+#nav-menu {
+  width: 25rem;  /* set width of element to 25rem */
+  display: block;    /* to allow margin:auto to work */
+  margin: 0 auto;  /* adds outer space for element */
+  padding: 1rem 0;/* adds inner space for element on left and right */
+}
+
+/* every link inside of nav */
+.nav-item a {
+  text-align: center;  /* center text */
+  padding: 1rem;  /* adds inner space for element */
+  color: #ffc30e;  /* change font color */
+}
+
+/* when hovering over a link inside of nav */
+.nav-item a:hover{
+  background-color: #ffc30e;  /* Change background color */
+  color: #00275a;  /* change font color */
+}
+
+/* page footer */
+footer {
+  text-align: center;  /* center text */
+  background-color: #00275a;  /* Change background color */
+}
+
+/* text inside of footer */
+footer p {
+  padding: 1rem;  /* adds inner space for element */
+  color: #ffffff;  /* change font color */
+}
+
+/* all paragraphs in HTML file */
+p {
+  width: 70ch;  /* set width of element to 70 characters wide */
+  margin: 0 auto;  /* adds outer space for element */
+  color: #00275a;  /* change font color */
+}
+
+/* every section header */
+h2 {
+  text-align: center;  /* center text */
+}
+
+/* form header */
+h3 {
+  text-align: center;  /* center text */
+}
+
+/* form */
+form {
+  width: 70ch;  /* set width of element to 70 characters wide */
+  margin: 0 auto;  /* adds outer space for element */
+  background-color: #ffc30e;  /* Change background color */
+  padding: 1rem;  /* adds inner space for element */
+  border-radius: 1rem;  /* rounds corners */
+}
+
+/* drop down menu and input boxes */
+select, input {
+  margin: 0 auto;  /* adds outer space for element */
+  display: block;  /* for margin:auto to work */
+}
+
+/* labels in form */
+label {
+  display: block;  /* for margin:auto to work */
+  margin: 0.5rem 0 0 13.5rem;  /* adds outer space for element */
+}
+
+/* specifically the label for position dropdown menu */
+label.position {
+  margin-left: 16rem;  /* adds left outer space for element */
+}
+
+/* results table */
+table {
+  width: 70ch;  /* set width of element */
+  text-align: center;  /* center text */
+  margin: 0 auto;  /* adds outer space for element */
+  border: 1px solid #00275a;  /* sets a 1px wide solid dark blue border */
+  border-collapse: collapse;  /* remove spaces between td elements */
+}
+
+/* table's header */
+th {
+  background-color: #00275a;  /* Change background color */
+  color: white;  /* change font color */
+}
+
+/* every cell in the table */
+td {
+  border-left: 1px solid #00275a;  /* sets a 1px wide solid dark blue border on left side*/
+  border-right: 1px solid #00275a;  /* sets a 1px wide solid dark blue border on right side*/
+
+}
+
+/* every other row in the table*/
+tr:nth-child(even) {
+  background-color: hsl(214, 100%, 95%);  /* Change background color */
+}
+
+/* every section in the main body of the html file*/
+section {
+  margin-bottom: 2rem;  /* adds outer space for element */
+}
