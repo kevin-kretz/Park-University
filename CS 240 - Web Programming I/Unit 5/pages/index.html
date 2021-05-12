@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--Meta data-->
+    <meta charset="utf-8" />
+    <meta name="description" content="Unit 5, Homework 7" />
+    <meta name="keywords" content="Unit 5, HTML, Raspberry Pi and Arduinos" />
+    <meta name="author" content="Kevin Kretz" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Link to external stylesheet-->
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/main.js"></script>
+
+    <!--Page title-->
+    <title>Raspberry Pi and Arduinos</title>
+
+    <!--Embedded stylesheet-->
+    <style>
+      #about img {
+        border: 0.4rem dashed #0000b3;
+        border-radius: 1rem;
+      }
+
+      #about {
+        background-color: #0000f0;
+      }
+
+      label.radio {
+        display: inline;
+        margin-right: 1rem;
+      }
+
+      input.radio {
+        display: inline-block;
+      }
+
+      body {
+        font-family: "Calibri";
+        color: white;
+      }
+
+      header {
+        background-color: #c51d4a;
+      }
+    </style>
+  </head>
+  <!--Beginning of page text-->
+  <body>
+    <!--Heder section of page-->
+    <header>
+      <h1>Raspberry Pi and Arduinos</h1>
+      <nav>
+        <ul id="nav-menu">
+          <li class="nav-item"><a href="#about">About</a></li>
+          <li class="nav-item"><a href="#benifits">Benefits</a></li>
+          <li class="nav-item"><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--Main content-->
+    <main>
+      <section id="about">
+        <h2>What are Raspberry Pi and Arduinos?</h2>
+        <img alt="Raspberry Pi" src="../images/Raspberry_Pi.jpg" width="500">
+        <p>An Arduino board is a micro-controller board that allows you to compute and controller devices at a very affordable price.  A Raspberry Pi is essentially the same thing, just with in the form of a small computer.  It has a processor, memory, storage and other parts, just as a normal computer does.  Most people prefer to use a Raspberry Pi due to its ease of use based on their previous knowledge of how to use computers.</p>
+      </section>
+      <section id="benifits">
+        <h2>Why are Raspberry Pi and Arduinos important?</h2>
+        <img alt="Arduino board" src="../images/arduino.png" width="500">
+        <p>Raspberry Pi and Arduino boards are important becuase they allow anyone to add technology to projects they are working on.  For example, you can insert a Raspberry Pi into a Nerf gun and then use the Nerf gun to control a virtual reality headset.  This would give you an increadabily realistic feeling for your shooting games.  You could also add an arduino board to a small robotics shapes kit and turn a bunch of metal pieces into a working robot.  There are endless possibilities for what you can control, all it takes is a little imagination.</p>
+      </section>
+      <section id="contact">
+        <form onsubmit="return showResults()">
+          <h3>Talk to us!</h3>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="John" required autofocus>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" size="30" placeholder="johnsmith@example.com">
+          <label for="dob">Date of birth:</label>
+          <input type="date" id="dob" name="dob">
+          <label>Gender:</label>
+          <input type="radio" id="male" name="gender" value="Male" class="radio">
+          <label for="male" class="radio">Male</label>
+          <input type="radio" id="female" name="gender" value="Female" class="radio">
+          <label for="female" class="radio">Female</label>
+          <br>
+          <input type="checkbox" id="newsletter" class="newsletter" name="newsletter" checked>
+          <label for="newsletter" class="newsletter">I would like to receive your weekly newsletter</label>
+          <br>
+          <span class="center">
+            <button type="submit" id="submit-web" name="action" value="web" class="submit">Sumbit</button>
+          </span>
+        </form>
+
+        
+      </section>
+    </main>
+
+    <!--References and footer-->
+    <footer>
+      <p>By: Kevin Kretz | Unit 5, Chapter 9 Homework | 18 Apr 2021</p>
+    </footer>
+  </body>
+</html>
