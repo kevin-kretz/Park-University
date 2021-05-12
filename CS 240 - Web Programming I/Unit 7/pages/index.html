@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--Meta data-->
+    <meta charset="utf-8" />
+    <meta name="description" content="Unit 7, Homework 11" />
+    <meta name="keywords" content="Unit 7, HTML" />
+    <meta name="author" content="Kevin Kretz" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Link to external stylesheet-->
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/main.js"></script>
+
+    <!--Page title-->
+    <title>Vet Appointment Scheduler</title>
+
+    <!--Embedded stylesheet-->
+    <style>
+      #custom-header {  /* selects the custom h2 */
+        margin-top: 2rem;  /* adds top spacing */
+      }
+
+      #credit {  /* footer text */
+        text-align: center;  /* aligns center */
+      }
+
+      .inline {  /* all labels that should be inline */
+        display: inline;  /* display inline */
+        margin-left: 0.25rem;  /* add slight space on left */
+      }
+
+      div {  /* labels for groups of inputs (i.e. checkboxes) */
+        margin-top: 1rem;  /* add space above */
+      }
+
+      fieldset {  /* groups inside form */
+        margin-top: 1rem;  /* add space above */
+        border-color: #c50d07;  /* changes border color */
+        background-color: #ffe5e5;  /* changes background color of section */
+      }
+    </style>
+  </head>
+  <!--Beginning of page text-->
+  <body>
+    <!--Heder section of page-->
+    <header>
+      <h1>Vet Appointment Scheduler</h1>
+      <nav>
+        <ul id="nav-menu">
+          <li class="nav-item"><a href="#intro">Introductions</a></li>
+          <li class="nav-item"><a href="#form">Form</a></li>
+          <li class="nav-item"><a href="#results">Results</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--Main content-->
+    <main>
+      <section id="intro">
+        <h2>Schedule your appointment:</h2>
+        <p>Fill out the form below to schedule an appointment with your vet.  Please make sure the form is completely filled out, for us to provide the best care possible for your loved one.</p>
+      </section>
+      
+      <!-- form -->
+      <section id="form">
+        <form>
+          <fieldset>
+            <legend>Your information:</legend>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <label for="name">Email:</label>
+            <input type="email" id="email" name="email">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <label for="date">Preffered appointment date:</label>
+            <input type="date" id="date" name="date">
+            <div>Preffered type of communication:</div>
+            <input type="checkbox" id="phone" name="phone">
+            <label for="phone" class="inline">Phone</label><br>
+            <input type="checkbox" id="text" name="text">
+            <label for="text" class="inline">Text Messaging</label><br>
+            <input type="checkbox" id="prefer-email" name="prefer-email">
+            <label for="prefer-email" class="inline">Email</label>
+          </fieldset>
+          <fieldset>
+            <legend>Your pet's information:</legend>
+            <label for="pet-name">Name:</label>
+            <input type="text" id="pet-name" name="pet-name">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age"><br>
+            <input type="radio" id="male" name="gender">
+            <label for="male" class="inline">Male</label><br>
+            <input type="radio" id="female" name="gender">
+            <label for="female" class="inline">Female</label><br>
+            <input type="radio" id="unknown" name="gender">
+            <label for="unknown" class="inline">Unknown</label><br>
+            <label for="color">Color:</label>
+            <input type="color" id="color" name="color">
+            <label for="pet-type">Pet type:</label>
+            <select name="pet-type" id="pet-type">
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="hamster" selected>Hamster</option>
+                <option value="bird">Bird</option>
+                <option value="fish">Fish</option>
+            </select>
+            <div>Reason for appointment:</div>
+            <input type="checkbox" id="check-up" name="check-up">
+            <label for="check-up" class="inline">Check up</label><br>
+            <input type="checkbox" id="shots" name="shots">
+            <label for="shots" class="inline">Shots</label><br>
+            <input type="checkbox" id="emergency" name="emergency">
+            <label for="emergency" class="inline">Emergency</label><br>
+            <input type="checkbox" id="other" name="other">
+            <label for="other" class="inline">Other</label>
+          </fieldset>
+          <input type="submit" id="submit" onclick="updateWebsite(this.form), preventFormReset(event)">
+        </form>        
+      </section>
+
+      <!-- table -->
+      <section>
+        <h2 id="custom-header"></h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody id="services-table">
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Total</td>
+              <td id="total-cell"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+    </main>
+
+    <!--footer-->
+    <footer>
+      <p id="credit">By: Kevin Kretz | Unit 7, Homework 11 | 1 May 2021</p>
+    </footer>
+  </body>
+</html>
