@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--Meta data-->
+    <meta charset="utf-8" />
+    <meta name="description" content="Unit 6, Homework 10" />
+    <meta name="keywords" content="Unit 5, HTML, Baseball Stat Tracker" />
+    <meta name="author" content="Kevin Kretz" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Link to external stylesheet-->
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/main.js"></script>
+
+    <!--Page title-->
+    <title>Baseball Stat Tracker</title>
+
+    <!--Embedded stylesheet-->
+    <style>
+      /* Selects everything */
+      * {
+        margin: 0;  /* Remove margin */
+        padding: 0;  /* Remove padding */
+        font-family: "Calibri";  /* Change font */
+      }
+
+            /* every li inside of nav */
+      .nav-item {
+        list-style-type: none;  /* remove bullet points from ul */
+        display: inline-block;  /* display elements in a row */
+      }
+
+      /* main content inside of html page */
+      main {
+        padding: 1rem;  /* adds inner space for element */
+      }
+
+      /* form button*/
+      .button {
+        margin: 1rem auto 0;  /* adds outer space for element */
+        padding: 0.5rem 1rem;  /* adds inner space for element */
+        background-color: #00275a;  /* Change background color */
+        color: #ffffff;  /* change font color */
+        border-radius: 0.25rem;  /* rounded borders */
+      }
+    </style>
+  </head>
+  <!--Beginning of page text-->
+  <body>
+    <!--Heder section of page-->
+    <header>
+      <h1>Baseball Stat Tracker</h1>
+      <nav>
+        <ul id="nav-menu">
+          <li class="nav-item"><a href="#intro">Introductions</a></li>
+          <li class="nav-item"><a href="#form">Form</a></li>
+          <li class="nav-item"><a href="#results">Results</a></li>
+          <li class="nav-item"><a href="#instructions">Instructions</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--Main content-->
+    <main>
+      <section id="intro">
+        <h2>Batting Tracker</h2>
+        <p>This tracker will help you keep track of your key stats for the baseball season!  Fill out the form below to get started!</p>
+      </section>
+      
+      <!-- form -->
+      <section id="form">
+        <form>
+          <h3>Enter game information:</h3>
+          <label class="position" for="POS">Position:</label>
+          <select id="POS" name="POS">
+            <option>P</option>
+            <option>C</option>
+            <option>1B</option>
+            <option>2B</option>
+            <option>3B</option>
+            <option>SS</option>
+            <option>LF</option>
+            <option>CF</option>
+            <option>RF</option>
+            <option>DH</option>
+          </select>
+          <label for="AB">At Bats:</label>
+          <input type="number" id="AB" name="AB" min="0" required autofocus>
+          <label for="H">Hits:</label>
+          <input type="number" id="H" name="H" min="0" required>
+          <label for="HR">Homeruns:</label>
+          <input type="number" id="HR" name="HR" min="0" required>
+          <label for="BB">Walks:</label>
+          <input type="number" id="BB" name="BB" min="0" required>
+          <input class="button" type="button" value="Add game" onclick="addGame(this.form)">
+        </form>        
+      </section>
+
+      <!-- table -->
+      <section id="results">
+        <h2>Your games:</h2>
+        <table>
+          <thead>
+            <tr>
+              <th><abbr title="Games played">G</abbr></th>
+              <th><abbr title="Position">POS</abbr></th>
+              <th><abbr title="At bats">AB</abbr></th>
+              <th><abbr title="Hits">H</abbr></th>
+              <th><abbr title="Homeruns">HR</abbr></th>
+              <th><abbr title="Base on balls (Walks)">BB</abbr></th>
+              <th><abbr title="Average">AVG</abbr></th>
+              <th><abbr title="On base percentage">OBP</abbr></th>
+            </tr>
+          </thead>
+          <tbody id="games-table">
+          </tbody>
+        </table>
+      </section>
+
+      <!-- instructions -->
+      <section id="instructions">
+        <h2>Instrctions</h2>
+        <p>Make sure to fill out the form completely, because all the fields in this form are required.  This form will calculate your batting average (AVG) and your on base percentage (OBP) based on the infomation you provide.  It will also tell you which position you played most during your season.</p>
+      </section>
+    </main>
+
+    <!--footer-->
+    <footer>
+      <p>By: Kevin Kretz | Unit 6, Chapter 10 Homework | 25 Apr 2021</p>
+    </footer>
+  </body>
+</html>
