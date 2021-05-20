@@ -1,3 +1,5 @@
+# Instructions
+
 Employees in Great Company are given a pay raise each year based on their performance.  Write a program for their HR department to automatize the pay raise.  Your program will read the current salary data from a text file called curSalary.txt with unknown number of records (... indicates there may be more records):
 ```
    Jacobs Tom 56789.50 6.2
