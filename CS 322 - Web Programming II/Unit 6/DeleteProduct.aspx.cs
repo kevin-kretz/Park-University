@@ -1,16 +1,15 @@
-DeleteProducts.aspx.cs
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Web.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Web.Configuration;
+using System.Web.Services;
 
-namespace JW.Database
+namespace KevinKretz.Database
 {
     public partial class DeleteProducts : System.Web.UI.Page
     {
@@ -21,7 +20,7 @@ namespace JW.Database
             //Create the connection objects.
             SqlConnection con = new SqlConnection(CS);
             //Change the string sql to the name of your stored procedure.
-            string sql = "allProductsByID";
+            string sql = "ProductsByProductID";
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataReader reader;
@@ -40,9 +39,9 @@ namespace JW.Database
                     TableRow tempRow = new TableRow();    //Create the table row
                     //Create the table cell and then, assign the values to the cell
                     tempCell1 = new TableCell();
-                    tempCell1.Text = reader["productID"].ToString();
+                    tempCell1.Text = reader["ID"].ToString();
                     tempCell2 = new TableCell();
-                    tempCell2.Text = reader["productName"].ToString();
+                    tempCell2.Text = reader["Name"].ToString();
                     tempCell3 = new TableCell();
                     tempCell3.Text = reader["categoryID"].ToString();
                     tempCell4 = new TableCell();
@@ -50,7 +49,7 @@ namespace JW.Database
                     tempCell5 = new TableCell();
                     tempCell5.Text = reader["description"].ToString();
                     tempCell6 = new TableCell();
-                    tempCell6.Text = reader["numberInStock"].ToString();
+                    tempCell6.Text = reader["quantityInStock"].ToString();
                     tempCell7 = new TableCell();
                     tempCell7.Text = reader["cost"].ToString();
                     tempCell8 = new TableCell();
@@ -61,13 +60,13 @@ namespace JW.Database
                     System.Web.UI.WebControls.Image ProdPicture = new System.Web.UI.WebControls.Image();
                     ProdPicture.Width = 100;
                     ProdPicture.Height = 100;
-                    ProdPicture.ImageUrl = String.Format(ImagePath + "{0}", reader["productImage"].ToString().Trim());
+                    ProdPicture.ImageUrl = String.Format(ImagePath + "{0}", reader["Image"].ToString().Trim());
                     tempCell10.Controls.Add(ProdPicture);
                     tempCell11 = new TableCell();
                     System.Web.UI.WebControls.Image ProdThumb = new System.Web.UI.WebControls.Image();
                     ProdThumb.Width = 50;
                     ProdThumb.Height = 50;
-                    ProdThumb.ImageUrl = String.Format(ImagePath + "{0}", reader["productThumbnail"].ToString().Trim());
+                    ProdThumb.ImageUrl = String.Format(ImagePath + "{0}", reader["ThumbnailImage"].ToString().Trim());
                     tempCell11.Controls.Add(ProdThumb);
                     //These lines add the table cells to the table row. 
                     tempRow.Cells.Add(tempCell1);
@@ -82,7 +81,7 @@ namespace JW.Database
                     tempRow.Cells.Add(tempCell10);
                     tempRow.Cells.Add(tempCell11);
                     //The table row must be added to the table object. 
-                    ProductsTable.Rows.Add(tempRow);
+                    ProductTable.Rows.Add(tempRow);
                 }
                 reader.Close();
             }
@@ -109,10 +108,10 @@ namespace JW.Database
             ddlProductList.Items.Add(firstItem);
             ddlProductList.SelectedIndex = 0;
             //Insert your connection string
-            string CS = WebConfigurationManager.ConnectionStrings["JWCameraShop"].ConnectionString;
+            string CS = WebConfigurationManager.ConnectionStrings["KretzConnection"].ConnectionString;
             //Create the connection objects.
             SqlConnection con = new SqlConnection(CS);
-            string sql = "allProductsByID";
+            string sql = "ProductsByProductID";
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataReader readerSelect;
@@ -123,8 +122,8 @@ namespace JW.Database
                 while (readerSelect.Read())
                 {
                     ListItem newItem = new ListItem();
-                    newItem.Text = readerSelect["productName"].ToString();
-                    newItem.Value = readerSelect["productID"].ToString();
+                    newItem.Text = readerSelect["Name"].ToString();
+                    newItem.Value = readerSelect["ID"].ToString();
                     ddlProductList.Items.Add(newItem);
                 }
                 readerSelect.Close();
@@ -144,24 +143,24 @@ namespace JW.Database
 
         private void DeleteProduct()
         {
-            string CS = WebConfigurationManager.ConnectionStrings["JWCameraShop"].ConnectionString;
+            string CS = WebConfigurationManager.ConnectionStrings["KretzConnection"].ConnectionString;
             SqlConnection con = new SqlConnection(CS);
             string sql = "deleteProduct";
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@deleteID", ddlProductList.SelectedValue);
+            cmd.Parameters.AddWithValue("@ProductID", ddlProductList.SelectedValue);
             int valueReturned = 0;
 
             try
             {
                 con.Open();
                 valueReturned = cmd.ExecuteNonQuery();
-                AsideMessage.Text = valueReturned.ToString() + " record successfully deleted!";
+                Message.Text = valueReturned.ToString() + " record successfully deleted!";
             }
             catch (Exception err)
             {
-                AsideMessage.Text = "Error deleting record " + ddlProductList.SelectedValue + "\n";
-                AsideMessage.Text += err.Message + "\n";
+                Message.Text = "Error deleting record " + ddlProductList.SelectedValue + "\n";
+                Message.Text += err.Message + "\n";
                 if (con.State.ToString() == "Open")
                 {
                     con.Close();
@@ -182,16 +181,16 @@ namespace JW.Database
             //delete could be processed.
 
         }
-            protected void ddlProductList_SelectedIndexChanged(object sender, EventArgs e)
+        protected void ddlProductList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlProductList.SelectedValue != "0")
             {
-                if (ddlProductList.SelectedValue != "0")
-                {
-                    DeleteProduct();
-                }
+                DeleteProduct();
+            }
 
-                ddlProductList.Items.Clear();
-                ShowProductsList();
-                ShowProductsTable();
-        }
+            ddlProductList.Items.Clear();
+            ShowProductsList();
+            ShowProductsTable();
         }
     }
+}
